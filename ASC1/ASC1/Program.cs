@@ -11,8 +11,21 @@ namespace ASC1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World of C#!\n");
-            Console.ReadLine();
-            Console.WriteLine("\n");
+            string line=Console.ReadLine();
+
+            int numarpant;
+            try
+            {
+                //numarpant = int.Parse(line);
+                int.TryParse(line, out numarpant);
+                Console.WriteLine($"aveti {numarpant} numarul la pantof");
+            }
+            catch(FormatException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            
         }
     }
 }
